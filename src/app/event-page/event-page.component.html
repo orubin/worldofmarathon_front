@@ -64,7 +64,7 @@
           <div class="pract-container" tooltip={{practicals[i].hover_text}} tooltipPlacement="top"><img src="../../assets/icons/{{practicals[i].iconLink}}.png"><label>{{practicals[i].name}}</label></div>
         </div>
         <div class="col-sm-4 col-md-4">
-          <div class="pract-container" tooltip={{practicals[i].hover_text}} *ngIf="i+1 < practicals.length" tooltipPlacement="top"><img src="../../assets/icons/{{practicals[i+1].iconLink}}.png"><label>{{practicals[i+1].name}}</label></div>
+          <div class="pract-container" tooltip={{practicals[i+1].hover_text}} *ngIf="i+1 < practicals.length" tooltipPlacement="top"><img src="../../assets/icons/{{practicals[i+1].iconLink}}.png"><label>{{practicals[i+1].name}}</label></div>
         </div>
       </div>
     </div>
