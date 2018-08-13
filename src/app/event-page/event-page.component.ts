@@ -35,7 +35,7 @@ export class EventPageComponent implements OnInit {
       this.practicals = response.practicles;
       this.events = this.totalPackageService.selectedEvent.run_types;
       this.selectedEvent = this.events[0];
-      this.runmapLink = response.run_map + '?width=740&amp;height=1120;extended=1&amp;distance_markers=1&amp;height=660&amp;unit=metric" width="760" height="588" border="0" frameborder="0" marginheight="0" marginwidth="0" scrolling="no"';
+      this.runmapLink = response.run_map + '?width=740&amp;height=660;extended=1&amp;distance_markers=1&amp;unit_type=metric&amp;elevation=true" width="760" height="588" border="0" frameborder="0" marginheight="0" marginwidth="0" scrolling="no"';
 
     });
     if(this.totalPackageService.selectedEvent) {

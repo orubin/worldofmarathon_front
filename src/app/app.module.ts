@@ -2,11 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
-import {FormsModule} from "@angular/forms";
+import { RouterModule, PreloadAllModules } from '@angular/router';
+import { FormsModule } from "@angular/forms";
 
 
 // APP COMPONENTS
 import { AppComponent } from './app.component';
+import { ROUTES } from './app.routes';
 import { HeaderComponent } from './header/header.component';
 import { EventHeaderComponent } from './event-header/event-header.component';
 import { TotalPackageComponent } from './total-package/total-package.component';
@@ -102,6 +104,10 @@ import { TooltipModule } from "ngx-tooltip";
     BrowserAnimationsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBh-ap_SPo9ipvpljxjQ2k_Kuf5UQvYEUY'
+    }),
+    RouterModule.forRoot(ROUTES, {
+      useHash: Boolean(history.pushState) === false,
+      preloadingStrategy: PreloadAllModules
     }),
     MatDatepickerModule,
     MatNativeDateModule,
