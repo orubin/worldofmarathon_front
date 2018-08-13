@@ -1,7 +1,7 @@
 <div class="services-container">
   <div *ngFor="let service of availableServices" class="service-section">
     <div class="service-header"> {{service.serviceName}} </div>
-    <div class="avilable-services-section">
+    <div class="available-services-section">
         <app-service *ngFor="let tempService of service.serviceList" [service]="tempService"></app-service>
     </div>
   </div>
