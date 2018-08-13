@@ -1,0 +1,79 @@
+.event-header {
+  margin-top: 2em;
+  padding-bottom: .4em;
+  border-bottom: 1px solid #c3c3c3 ;
+  .event-header-title {
+    font-size: 3.5em;
+    color: #333333;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .event-date {
+    font-size: 2em;
+    color: #ffffff;
+    background: #333333;
+    font-weight: 700;
+    padding: 5px;
+    text-align: center;
+    width: 30%;
+  }
+
+  .event-stats {
+    font-size: 1.5em;
+    .event-rec {
+      color: #c2974e;
+    }
+    .event-avg {
+      color: #333333;
+    }
+  }
+
+  .event-subtitle {
+    color: #898989;
+    display: flex;
+    .event-country {
+      display: flex;
+      .country-flag {
+        img {
+          width: 3em;
+        }
+      }
+      .country-name {
+        line-height: 2em;
+        font-weight: 700;
+        margin-left: 1em;
+        padding-right: 1em;
+        border-right: 1px solid #333333;
+      }
+    }
+    .event-stats-icons {
+      margin-left: 1em;
+      display: flex;
+      .stat-icon-container {
+        margin-left: 1em;
+        display: flex;
+        label {
+          margin-left: -.2em;
+        }
+        app-round-image {
+          margin-right: .6em;
+        }
+      }
+    }
+  }
+}
+
+.mobile {
+  padding: 1em;
+  .event-subtitle {
+    display: block;
+  }
+  .event-stats-icons {
+    margin-left: 0 !important;
+    .stat-icon-container {
+      margin-left: 0 !important;
+      margin-right: 1em !important;
+    }
+  }
+}

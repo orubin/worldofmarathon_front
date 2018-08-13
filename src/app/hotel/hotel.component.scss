@@ -1,0 +1,106 @@
+.hotel-container {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  border-top: 1px solid #c3c3c3;
+  .hotel-name {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 700;
+    .glyphicon {
+      top: 5px !important;
+    }
+  }
+  .hotel-image {
+    height: auto;
+    width: 100%;
+    cursor: pointer;
+  }
+  .images {
+    margin-top: .5em;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .middle-col {
+    border-left: 1px dashed #c3c3c3;
+    border-right:  1px dashed #c3c3c3;
+    .hotel-price-container {
+      text-align: center;
+      .price {
+        margin-top: 1em;
+        font-weight: bold;
+        font-size: 1.5em;
+        margin-bottom: .5em;
+      }
+      .provider {
+        margin-bottom: .5em;
+        font-weight: 600;
+      }
+      .btn-container {
+
+      }
+    }
+    .ranks-container {
+      margin-top: 1em;
+      .ta-rank {
+        margin-bottom: .5em;
+        display: flex;
+        .ta-rank-icon {
+          margin-left: 0.5em;
+        }
+      }
+      .booking-rank {
+        margin-bottom: .5em;
+        display: flex;
+        .booking-grade {
+          margin-left: 0.5em;
+          background: #3A3A3A;
+          padding: 5px;
+          color: white;
+          font-weight: 600;
+        }
+      }
+      .hotel-stars {
+        text-align: center;
+        margin-bottom: 1em;
+        .review-star {
+          height: 1.5em;
+        }
+      }
+    }
+  }
+
+  .hotel-stats {
+    border-left: 1px dashed #c3c3c3;
+    margin-top: 1em;
+    height: auto;
+    .review-star {
+      height: 1em;
+    }
+    .community-rank {
+      margin-bottom: .5em;
+      display: flex;
+      .stars {
+        margin-left: .5em;
+      }
+    }
+    .hotel-location {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      font-weight: 600;
+      font-size: 1.2em;
+      .distance-header {
+        text-align: center;
+        margin-bottom: .5em;
+      }
+      .location-container {
+        display: flex;
+        .location-text {
+          margin-left: .5em;
+          line-height: 1.6em;
+
+        }
+      }
+    }
+  }
+}

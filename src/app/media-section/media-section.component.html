@@ -1,0 +1,32 @@
+<div class="media-container">
+  <!--<iframe class="video-player" src={{videoSrc}} allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+  <iframe *ngIf="mediaType === 'video'" class="video-player"  [src]="videoSrc | safe" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <div class="main-image" *ngIf="mediaType === 'image'">
+    <img src="{{slides[0]}}">
+  </div>
+</div>
+
+
+<!--MOBILE-->
+<div *ngIf="deviceDetectionService.isMobile()">
+  <div class="carousel-container">
+    <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
+      <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+        <img src="{{slide}}" alt="" width="100%">
+      </div>
+    </ngx-slick>
+  </div>
+</div>
+
+<div class="images-container" *ngIf="!deviceDetectionService.isMobile()">
+  <div class="arrow-container" (click)="prevImage()">
+    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+  </div>
+  <img class="main-image" src="{{slides[0]}}">
+  <img src="{{slides[1]}}" (click)="selectImage(1)">
+  <img src="{{slides[2]}}" (click)="selectImage(2)">
+  <img src="{{slides[3]}}" (click)="selectImage(3)">
+  <div (click)="nextImage()">
+    <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+  </div>
+</div>

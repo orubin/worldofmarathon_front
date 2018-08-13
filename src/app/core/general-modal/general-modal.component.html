@@ -1,0 +1,52 @@
+<div class="modal fade" id="generalModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="general-modal-header">
+          {{title}}
+        </div>
+        <div class="general-modal-content">
+          {{text}}
+          <div *ngIf="title === 'Contact us'">
+
+            <div class="row">
+              <div class="col-sm-2 col-md-2">
+                <label>Name:</label>
+              </div>
+              <div class="col-sm-6 col-md-6">
+                <input type="text" [(ngModel)]="contactName">
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-sm-2 col-md-2">
+                <label>Email:</label>
+              </div>
+              <div class="col-sm-6 col-md-6">
+                <input type="text" [(ngModel)]="contactEmail">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-2 col-md-2">
+                <label>Message</label>
+              </div>
+              <div class="col-sm-6 col-md-6">
+                <div class="textarea-container">
+                  <textarea placeholder="Say something nice" cols="30" rows="5" [(ngModel)]="contactMessage"></textarea>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="contact-btn">
+              <app-button [text]="'SEND'" [classes]="'box-shadow-lite peru'" (click)="sendMessage()"></app-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

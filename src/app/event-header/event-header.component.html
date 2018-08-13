@@ -1,0 +1,45 @@
+<div class="event-header"[ngClass]="{'mobile': deviceDetectionService.isMobile()}">
+  <div class="row">
+    <div class="col-sm-8 col-md-8">
+      <div class="event-header-title" (click)="navigateHome()">
+        {{event.name}}
+      </div>
+      <div class="event-date">
+        {{event.date | date:'dd.MM.yyyy'}}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-8 col-md-8">
+      <div class="event-rank">
+        <label> COMMUNITY RANKING</label>
+        <span *ngFor="let star of rank">
+          <i class="glyphicon glyphicon-star"></i>
+        </span>
+      </div>
+      <div class="event-subtitle">
+        <div class="event-country">
+          <div class="country-flag">
+            <app-round-image [classes]="'small'" [imageName]="'flags/' + event.country + '.png'"></app-round-image>
+          </div>
+          <div class="country-name">
+            {{event.country}}
+          </div>
+        </div>
+        <div class="event-stats-icons">
+          <div class="stat-icon-container">
+            <app-round-image [classes]="'small'" [imageName]="'icons/' + event.difficulty + '.png' "></app-round-image>
+            <label>{{event.difficulty.charAt(0).toUpperCase() + event.difficulty.substr(1).toLowerCase()}}</label>
+          </div>
+
+          <div class="stat-icon-container">
+            <app-round-image [classes]="'small'" [imageName]="'icons/' + event.weather_icon + '.png'"></app-round-image>
+            <label>Weather</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

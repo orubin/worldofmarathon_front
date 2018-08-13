@@ -1,0 +1,36 @@
+.accom-header {
+  text-align: center;
+  font-size: 2.2em;
+  font-weight: 700;
+  color: #3A3A3A;
+}
+.accom-search-form {
+  margin-top: 2em;
+  display: flex;
+  .date {
+    margin-left: 2em;
+  }
+
+  .select {
+    margin-left: 2em;
+  }
+
+  .btn-container {
+    margin-left: 2em;
+  }
+}
+
+.hotels-list {
+  margin-top: 1em;
+    .stars {
+      text-align: center;
+      font-size: 1.8em;
+      font-weight: 600;
+      span {
+        cursor: pointer;
+        border-right: 2px solid #3A3A3A;
+        margin-right: 1em;
+        padding-right: 5px;
+      }
+    }
+}

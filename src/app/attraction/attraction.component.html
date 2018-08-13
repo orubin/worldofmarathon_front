@@ -1,0 +1,50 @@
+<div class="attraction-container">
+  <div class="row">
+    <div class="col-sm-8 col-md-8 right-board">
+      <div class="attraction-name">
+        {{this.attraction.name}}
+      </div>
+      <div class="attraction-date">
+        {{this.dayName}} |  {{this.attractionDate}} | {{this.attractionHour}}
+      </div>
+      <div class="attraction-location">
+        {{this.attraction.location.name}}
+      </div>
+
+      <div class="attraction-attending">
+        <div class="attending-container">
+          <app-round-image *ngFor="let user of attending" [classes]="'round-image small'" [imageName]="'/users/user.png'"></app-round-image>
+          <span class="and-more">
+            + {{attendingNum}} Are going
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-4 col-md-4 tickets-padding">
+      <div class="tickets-table-container">
+        <table class="tickets-table">
+          <tr>
+            <td></td>
+            <td class="td-center">
+                FROM:
+            </td>
+          </tr>
+          <tr>
+            <td class="selector-container">
+              <select class="form-control" #ticketsSelector (change)="onAmountSelect(ticketsSelector.value)">
+                <option *ngFor="let ticket of ticketAmount" value="{{ticket}}"> {{ticket}}</option>
+              </select>
+            </td>
+            <td class="td-center price">
+              ${{attraction.price}}
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="add-btn-container">
+        <app-button [text]="'ADD TO PACKAGE'"  [classes]="'peru'" [rightIcon]="'glyphicon glyphicon-chevron-right'" (click)="addAttractionToPackage()"></app-button>
+      </div>
+    </div>
+  </div>
+</div>

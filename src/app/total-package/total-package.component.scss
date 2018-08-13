@@ -1,0 +1,80 @@
+.total-package {
+  .timer-container{
+    color: #c09348;
+    border: 2px solid #c09348;
+    width: 100%;
+    height: 10em;
+    margin-top: 3em;
+    h1{
+      text-align: center;
+      margin-top: -10px;
+      height: 20px;
+      line-height: 1em;
+      font-size: 2em;
+      .timer-header {
+        padding: 0 1em 0 1em;
+        background-color: white;
+        font-weight: 700;
+      }
+    }
+    .timer {
+      display: flex;
+      font-size: 1.6em;
+      color: black;
+      width: 90%;
+      margin-left: .5em;
+      .timer-section {
+        display: grid;
+        text-align: center;
+        .time{
+          font-weight: 600;
+          font-size: 2em;
+        }
+      }
+    }
+  }
+
+  .package-container {
+    padding: 1em 0 1em 0;
+    margin-top: 2em;
+    background: #333333;
+    -webkit-box-shadow: 15px 15px 34px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 15px 15px 34px 0px rgba(0,0,0,0.75);
+    box-shadow: 15px 15px 34px 0px rgba(0,0,0,0.75);
+    color: white;
+    .package-header {
+      font-weight: 700;
+      font-size: 2em;
+      padding-top: 1em;
+      text-align: center;
+      .package-total-price {
+        font-size: 2em;
+        margin-top: .5em;
+      }
+    }
+    .package-body {
+      .checkout-btn-container {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1em;
+        font-size: 1.2em;
+        width:90%;
+        font-weight: 700;
+      }
+      .package-body-header {
+        font-weight: bold;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.7em;
+      }
+      .package-guarantee-text {
+        font-size: 1.4em;
+        ul {
+          padding: 0;
+          list-style-type: none;
+        }
+      }
+    }
+  }
+}

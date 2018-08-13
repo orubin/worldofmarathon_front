@@ -1,0 +1,60 @@
+<div class="row margin-row">
+  <div class="col-sm-8 col-md-8">
+    <div class="place-header">
+      {{place.name}}
+    </div>
+    <div class="city-description">
+      {{place.description}}
+    </div>
+    <div class="city-images">
+      <app-image-bar [placeName]="place.name" [slides]="place.images"></app-image-bar>
+    </div>
+  </div>
+  <div class="col-sm-4 col-md-4">
+    <div class="forecast-section">
+      <app-forecast></app-forecast>
+    </div>
+  </div>
+</div>
+
+<!--<div class="row">-->
+  <!--<div class="attractions-section">-->
+    <!--<div class="attractions-search-bar">-->
+      <!--<span class="attractions-header">-->
+      <!--ATTRACTIONS-->
+    <!--</span>-->
+        <!--<div class="form-input-container">-->
+          <!--<app-date-picker #attractionStartInput [placeholder]="'FROM'"></app-date-picker>-->
+        <!--</div>-->
+
+        <!--<div class="form-input-container">-->
+          <!--<app-date-picker #attractionEndInput [placeholder]="'TO'"></app-date-picker>-->
+        <!--</div>-->
+
+      <!--<div class="form-input-container btn-container">-->
+        <!--<app-button (click)="searchAttractions()" [leftIcon]="'glyphicon glyphicon-search'" [classes]="'dark-gray'"></app-button>-->
+      <!--</div>-->
+
+    <!--</div>-->
+
+    <!--<div class="attractions-list">-->
+      <!--<div *ngFor="let attraction of attractions">-->
+        <!--<app-attraction [attraction]="attraction"></app-attraction>-->
+      <!--</div>-->
+    <!--</div>-->
+
+  <!--</div>-->
+<!--</div>-->
+
+<div class="row marathon-friendly-section">
+
+  <div class="friendly-header">
+      MARATHON FRIENDLY LOCATIONS
+  </div>
+  <div class="map-container">
+    <agm-map [mapTypeControl] = "true" style="height: 55em" [zoom]="mapData.zoom" [latitude]="mapData.eventLocation.lat" [longitude]="mapData.eventLocation.lng">
+      <agm-marker *ngFor="let marker of markers" [latitude]="marker.latitude" [longitude]="marker.longitude" [iconUrl]=""></agm-marker>
+    </agm-map>
+  </div>
+
+</div>

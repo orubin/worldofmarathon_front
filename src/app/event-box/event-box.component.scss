@@ -1,0 +1,86 @@
+.mobile {
+  padding: 0 2em;
+}
+
+.event-container {
+  margin-bottom: 4em;
+  .image-container {
+    -webkit-box-shadow: 4px 5px 31px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 5px 31px -4px rgba(0,0,0,0.75);
+    box-shadow: 4px 5px 31px -4px rgba(0,0,0,0.75);
+    img {
+      width: 100%;
+      height: 25em;
+    }
+  }
+  .event-header {
+    margin-top: 1em;
+    margin-bottom: .3em;
+    font-size:1.5em;
+    font-weight: bolder;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+  }
+  .ranking {
+    text-align: center;
+    margin-bottom: .5em;
+    .ranking-stars {
+      margin-left: 0.5em;
+    }
+  }
+  .country-flag-container {
+    text-align: center;
+    margin-left: 1em;
+    border-left: 1px solid #333333;
+    padding-left: 1em;
+    padding-top: 0.4em;
+  }
+  .date {
+    font-size: 1.4em;
+    font-weight: 700;
+    padding: .2em;
+    margin-right: .21em;
+    background: #3A3A3A;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+  }
+  .stats-row {
+    padding: .2em;
+    margin: .4em;
+    font-weight: bold;
+    .icon-container {
+      display: flex;
+      margin-left: 1em;
+      app-round-image {
+        margin-right: .3em;
+      }
+      div {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: auto;
+        white-space: nowrap;
+      }
+    }
+    .no-margin {
+      margin-left: 0 !important;
+    }
+  }
+  .average {
+    text-align: center;
+    margin-bottom: .5em;
+    .avg-header {
+      font-weight: 700;
+    }
+  }
+  .times {
+    display: grid;
+    font-weight: bold;
+    .record {
+      color: #c09348;
+    }
+  }
+}

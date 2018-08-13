@@ -1,0 +1,71 @@
+.margin-row {
+  margin-top: 1em;
+}
+.place-header {
+  color: #333333;
+  font-size: 2em;
+  font-weight: bold;
+}
+.city-description {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+.city-images {
+  display: flex;
+  img {
+    margin-left: 2em;
+    width: 6em;
+    height: 6em;
+  }
+}
+
+.average-prices-section {
+  .average-prices-header {
+    font-size: 1.2em;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .images-container {
+    display: flex;
+    img {
+      height: 5em;
+    }
+  }
+}
+
+.forecast-section {
+
+}
+
+.attractions-section {
+  margin-top: 1em;
+  .attractions-search-bar {
+    display: flex;
+    .attractions-header {
+      font-weight: bold;
+      font-size: 1.5em;
+      margin-top: .2em;
+    }
+    .form-input-container {
+      margin-left: 1em;
+      app-button {
+        font-size: 1.3em;
+      }
+    }
+  }
+  .attractions-list {
+
+  }
+}
+
+.marathon-friendly-section {
+  margin-top: 3em;
+  margin-bottom: 1em;
+  .friendly-header {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+  }
+}

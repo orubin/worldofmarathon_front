@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-sm-2 col-md-2"></div>
+  <div class="col-sm-8 col-md-8">
+    <div class="search-form">
+      <select class="form-control" #typeSelector (change)="onTypeChange(typeSelector.value)" disabled>
+        <option value=" " disabled>TYPE</option>
+        <option value="marathon">Marathon</option>
+        <option value="halfMarathon">Half-Marathon</option>
+        <option value="10k">10K run</option>
+      </select>
+
+      <select class="form-control" #difficultySelector (change)="onDifficultySelectorChange(difficultySelector.value)" disabled>
+        <option value=" " disabled>DIFFICULTY</option>
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+
+      <div class="form-input-container">
+        <app-date-picker #attractionStartInput [disabled]="true" [placeholder]="'FROM'"></app-date-picker>
+      </div>
+
+      <div class="form-input-container">
+        <app-date-picker #attractionEndInput [disabled]="true" [placeholder]="'TO'"></app-date-picker>
+      </div>
+
+      <select class="form-control" #weatherSelector (change)="onWeatherSelectorSelectorChange(weatherSelector.value)" disabled>
+        <option value=" " disabled>WEATHER</option>
+        <option value="clear">Clear</option>
+        <option value="windy">Windy</option>
+        <option value="cloudy">Cloudy</option>
+      </select>
+
+      <select class="form-control" #environmentSelector (change)="onEnvironmentSelectorChange(environmentSelector.value)" disabled>
+        <option value=" " disabled>ENVIRONMENT</option>
+        <option value="x">environment 1</option>
+        <option value="y">environment 2</option>
+        <option value="`">environment 3</option>
+      </select>
+
+      <app-button [text]="'FIND'" [classes]="'dark-gray'"></app-button>
+
+
+    </div>
+  </div>
+  <div class="col-sm-2 col-md-2"></div>
+</div>

@@ -1,0 +1,48 @@
+button {
+  padding: 5px 15px 5px 15px;
+}
+
+.extra-padding {
+  padding: 15px 25px 15px 25px;
+}
+
+.radius {
+  border-radius: 5px;
+}
+
+.peru {
+  background: #c09348;
+  color: white;
+  border-color: #c09348;
+  width: 100%;
+}
+
+.orange {
+  background: darkorange;
+  color: black;
+
+}
+
+.blue {
+  background: #0e7fb3;
+  color: white;
+  font-weight: 700;
+
+}
+
+.dark-gray {
+  background: #333333;
+  color: white;
+  border-color: #333333;
+}
+
+.xlarge {
+  width: 100%
+}
+
+.box-shadow-lite {
+  -webkit-box-shadow: 5px 5px 19px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px 5px 19px 0px rgba(0,0,0,0.75);
+  box-shadow: 5px 5px 19px 0px rgba(0,0,0,0.75);
+}
+

@@ -1,0 +1,25 @@
+export class Hotel{
+    public id: number;
+    public name: string;
+    public description: string;
+    public distance_from_finish_point: string;
+    public distance_to_starting_point: string;
+    public time_in_public_transportation: string;
+    public address: string;
+    public img_url1: string;
+    public img_url2: string;
+    public img_url3: string;
+    public img_url4: string;
+    public img_url5: string;
+    public img_url6: string;
+    public img_url7: string;
+    public img_url8: string;
+    public img_url9: string;
+    public img_url10: string;
+    public rating: string;
+    public stars_rating: string;
+    public booking_rating: string;
+    public trip_advisor_rating: string;
+    public latitude: string;
+    public longitude: string;
+}

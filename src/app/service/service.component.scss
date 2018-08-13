@@ -1,0 +1,43 @@
+.service-container {
+  margin-right: 2em;
+
+  .service-image-container {
+    img {
+      height: 10em;
+      width: 16em;
+    }
+  }
+
+  .service-header {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin: 1em 0 1em 0;
+  }
+
+  .order-bar {
+    display: flex;
+    .select-container {
+      .form-control {
+        height: 1.5em !important;
+      }
+    }
+    .price {
+      font-weight: bold;
+      margin-left: .5em;
+    }
+    .btn-container {
+      margin-left: .5em;
+    }
+  }
+  .community-ranking-container {
+    margin-top: .5em;
+  }
+}
+
+.short {
+  font-size: .8em;
+}
+.wide {
+  width: 100%;
+  margin-left: 0 !important;
+}

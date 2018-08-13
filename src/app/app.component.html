@@ -1,0 +1,45 @@
+<div [ngClass]="scrollUp ? 'sticky' : ' '" *ngIf="allEventsLoaded || searchBar">
+  <app-header-component></app-header-component>
+</div>
+<app-homepage *ngIf="searchBar"></app-homepage>
+<div *ngIf="!isEventLoaded && !searchBar">
+  <app-event-selection></app-event-selection>
+</div>
+
+<div *ngIf="isEventLoaded">
+  <div class="row">
+    <div class="col-sm-1 col-md-1"></div>
+    <div class="col-sm-10 col-md-10">
+      <app-event-header></app-event-header>
+    </div>
+    <div class="col-sm-1 col-md-1"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-1 col-md-1"></div>
+
+    <div class="app-wrapper">
+      <div class="col-sm-10 col-md-10">
+        <div class="col-sm-8 col-md-8">
+          <app-video-container></app-video-container>
+          <app-progress-bar></app-progress-bar>
+          <app-content></app-content>
+        </div>
+
+        <div class="sticky package" *ngIf="!isMobile">
+          <div class="col-sm-4 col-md-4">
+            <app-total-package></app-total-package>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-sm-1 col-md-1"></div>
+  </div>
+</div>
+<app-footer *ngIf="allEventsLoaded"></app-footer>
+
+<app-login-modal></app-login-modal>
+<app-carousel-modal></app-carousel-modal>
+<app-general-modal [text]="generalModalText" [title]="generalModalTitle"></app-general-modal>

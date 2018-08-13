@@ -1,0 +1,129 @@
+<div class="progress-bar-wrapper" *ngIf="!deviceDetectionService.isMobile()">
+  <table>
+    <tr>
+      <td (click)="updateProgressBar('event', 0)"
+          [ngClass]="{'active':activeSection == 'event', 'skipped': skipped[0]}"
+          class="section-cube">
+        <h1><span class="progress-step-number">1</span></h1>
+        <span>THE RACE</span>
+        <!--<div *ngIf="skipped[0]  && totalPackageService.totalPackageCheckout.event.total == 0" class="skipped">-->
+          <!--Skipped-->
+        <!--</div>-->
+        <div *ngIf="totalPackageService.totalPackageCheckout.event.total != 0" class="cube-done">
+          <div>{{totalPackageService.totalPackageCheckout.event.tickets}} X {{totalPackageService.totalPackageCheckout.event.total / totalPackageService.totalPackageCheckout.event.tickets}} $</div>
+          <div>{{totalPackageService.totalPackageCheckout.event.event}}</div>
+        </div>
+      </td>
+
+      <td (click)="updateProgressBar('place', 1)"
+          [ngClass]="{'active':activeSection == 'place', 'skipped': skipped[1]}"
+          class="section-cube">
+        <div class="cube-header">
+          <h1><span class="progress-step-number">2</span></h1>
+          <span>THE PLACE</span>
+        </div>
+        <div class="cube-orders">
+          <!--<div *ngIf="skipped[1]" class="skipped">-->
+            <!--Skipped-->
+          <!--</div>-->
+          <table>
+            <tr *ngFor="let attraction of attractionsInPackage">
+              <td>{{attraction.attractionTicketsAmount}}</td>
+              <td>{{attraction.name}}</td>
+            </tr>
+          </table>
+          <span class="place-total" *ngIf="this.totalPackageService.totalPackageCheckout.attraction.total">
+            $ {{this.totalPackageService.totalPackageCheckout.attraction.total}}
+          </span>
+        </div>
+      </td>
+
+      <td (click)="updateProgressBar('trans', 2)"
+          [ngClass]="{'active':activeSection == 'trans', 'skipped': skipped[2]}"
+          class="section-cube">
+        <h1><span class="progress-step-number">3</span></h1>
+        <span>TRANSFERS</span>
+        <!--<div *ngIf="skipped[2] && totalPackageService.totalPackageCheckout.attraction.total != 0" class="skipped">-->
+          <!--Skipped-->
+        <!--</div>-->
+      </td>
+
+      <td (click)="updateProgressBar('accom', 3)"
+          [ngClass]="{'active':activeSection == 'accom', 'skipped': skipped[3]}"
+          class="section-cube">
+        <h1><span class="progress-step-number">4</span></h1>
+        <span>ACCOM.</span>
+        <!--<div *ngIf="skipped[3] && totalPackageService.totalPackageCheckout.accommodation.price != 0" class="skipped">-->
+          <!--Skipped-->
+        <!--</div>-->
+      </td>
+
+      <td (click)="updateProgressBar('services', 4)"
+          [ngClass]="{'active':activeSection == 'services', 'skipped': skipped[4]}"
+          class="section-cube">
+        <h1><span class="progress-step-number">5</span></h1>
+        <span>SERVICES</span>
+        <!--<div *ngIf="skipped[4]" class="skipped">-->
+          <!--Skipped-->
+        <!--</div>-->
+      </td>
+
+      <td (click)="updateProgressBar('community', 5)"
+          [ngClass]="{'active':activeSection == 'community'}"
+          class="section-cube">
+        <h1><span class="progress-step-number">6</span></h1>
+        <span>COMMUNITY</span>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<!--MOBILE PROGRESS BAR-->
+<!--TODO: REPLACE WITH SIDEBAR-->
+<div class="mobile-progress-bar-wrapper" *ngIf="deviceDetectionService.isMobile()">
+  <div class="arrow-container" (click)="updateProgressBarMobile('back')">
+    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+  </div>
+
+  <table>
+    <tr>
+
+      <td (click)="updateProgressBar(mobileCubeContent[mobileCenter - 1].value, mobileCenter - 1)"
+          [ngClass]="{'active':activeSection == mobileCubeContent[mobileCenter - 1].value, 'skipped': skipped[mobileCenter - 1]}"
+          class="section-cube">
+        <h3><span class="progress-step-number">{{mobileCenter}}</span></h3>
+        <span>{{mobileCubeContent[mobileCenter - 1].header}}</span>
+        <!--<div *ngIf="skipped[mobileCenter - 1]" class="skipped">-->
+          <!--Skipped-->
+        <!--</div>-->
+      </td>
+
+      <td (click)="updateProgressBar(mobileCubeContent[mobileCenter].value, mobileCenter)"
+          [ngClass]="{'active':activeSection == mobileCubeContent[mobileCenter].value, 'skipped': skipped[mobileCenter]}"
+          class="section-cube">
+        <h3><span class="progress-step-number">{{mobileCenter + 1}}</span></h3>
+        <span>{{mobileCubeContent[mobileCenter].header}}</span>
+        <div *ngIf="skipped[mobileCenter]" class="skipped">
+          Skipped
+        </div>
+      </td>
+
+      <td (click)="updateProgressBar(mobileCubeContent[mobileCenter + 1].value, mobileCenter + 1)"
+          [ngClass]="{'active':activeSection == mobileCubeContent[mobileCenter + 1].value, 'skipped': skipped[mobileCenter + 1]}"
+          class="section-cube">
+        <h3><span class="progress-step-number">{{mobileCenter + 2}}</span></h3>
+        <span>{{mobileCubeContent[mobileCenter + 1].header}}</span>
+        <!--<div *ngIf="skipped[mobileCenter + 1]" class="skipped">-->
+          <!--Skipped-->
+        <!--</div>-->
+      </td>
+
+    </tr>
+  </table>
+
+  <div class="arrow-container" (click)="updateProgressBarMobile('froward')">
+    <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+  </div>
+</div>
+

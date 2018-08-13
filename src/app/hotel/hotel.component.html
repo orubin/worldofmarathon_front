@@ -1,0 +1,77 @@
+<div class="hotel-container">
+  <div class="hotel-name">
+    {{hotel.name}} <i class="glyphicon glyphicon-tag"></i>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 col-md-4">
+      <div>
+        <img (click)="updateCarouselImages()" class="hotel-image" data-toggle="modal" data-target="#carouselModal"  src="{{hotel.img_url1}}">
+        <div (click)="updateCarouselImages()" class="images"      data-toggle="modal" data-target="#carouselModal">
+          View more
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4 col-md-4 middle-col">
+      <div class="ranks-container">
+        <div class="hotel-stars">
+            <span *ngFor="let star of hotelLevelStars">
+              <img class="review-star" src="../assets/images/icons/star.png">
+            </span>
+        </div>
+        <div class="ta-rank">
+        <span>
+          <app-round-image [classes]="'bigger'" [imageName]="'icons/ta_logo.png'"></app-round-image>
+        </span>
+          <div class="ta-rank-icon">
+            <app-round-image [imageName]="'icons/ta' + hotel.trip_advisor_rating + '.gif'"></app-round-image>
+          </div>
+        </div>
+
+        <div class="booking-rank">
+          <span>
+            <app-round-image [classes]="'bigger booking-background'" [imageName]="'icons/booking.png'"></app-round-image>
+          </span>
+          <div>
+            <span class="booking-grade">{{hotel.booking_rating}}</span> ( {{hotel.booking_reviews}} Reviews )
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4 col-md-4 hotel-stats">
+      <div class="community-rank">
+        <span>Community Ranking:</span>
+        <div class="stars">
+        <span *ngFor="let star of hotelCommunityStars">
+          <img class="review-star" src="../assets/images/icons/star.png">
+        </span>
+        </div>
+      </div>
+
+      <div class="stats">
+        {{hotel.description_arr[0]}}<br>
+        {{hotel.description_arr[1]}}<br>
+        {{hotel.description_arr[2]}}<br>
+        <div class="hotel-location">
+          <div class="distance-header">
+            Hotel to start point:
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-6 location-container">
+                <span>
+                  <app-round-image [classes]="'medium'" [imageName]="'icons/bus.png'"></app-round-image>
+                </span>
+              <span class="location-text">{{hotel.time_in_public_transportation}}</span>
+            </div>
+            <div class="col-sm-6 col-md-6 location-container">
+                <span>
+                  <app-round-image [classes]="'medium'" [imageName]="'icons/pins.png'"></app-round-image>
+                </span>
+              <span class="location-text">{{hotel.distance_from_finish_point}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

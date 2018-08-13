@@ -1,0 +1,23 @@
+<!--//TODO: use for mobile?-->
+<div *ngIf="deviceDetectionService.isMobile()">
+  <div class="carousel-container">
+    <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
+      <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+        <img src="{{slide}}" alt="" width="100%">
+      </div>
+    </ngx-slick>
+  </div>
+</div>
+
+<div class="images-container" *ngIf="!deviceDetectionService.isMobile()">
+  <div class="arrow-container" (click)="prevImage()">
+    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+  </div>
+  <img src="{{slides[1]}}" (click)="openImageCarousel()"  data-toggle="modal" data-target="#carouselModal">
+  <img src="{{slides[2]}}" (click)="openImageCarousel()"  data-toggle="modal" data-target="#carouselModal">
+  <img src="{{slides[3]}}" (click)="openImageCarousel()"  data-toggle="modal" data-target="#carouselModal">
+  <img src="{{slides[4]}}" (click)="openImageCarousel()"  data-toggle="modal" data-target="#carouselModal">
+  <div (click)="nextImage()">
+    <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+  </div>
+</div>

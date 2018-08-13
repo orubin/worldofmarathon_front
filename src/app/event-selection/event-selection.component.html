@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-sm-1 col-md-1"></div>
+
+    <div class="col-sm-10 col-md-10">
+      <div class="search-bar-container">
+        <div class="search-header">
+          GEAR UP! WE FOUND YOUR NEXT CHALLENGE
+        </div>
+        <!--<div class="search-bar">-->
+          <!--<app-event-search-bar></app-event-search-bar>-->
+        <!--</div>-->
+      </div>
+
+      <div class="events-container">
+        <div class="events-header">
+          Choose your race
+        </div>
+        <div *ngFor="let event of events; let i = index;">
+          <div *ngIf="i % 3 == 0" class="row">
+            <app-event-box (click)="selectEvent(events[i])" [event]="events[i]"></app-event-box>
+            <app-event-box (click)="selectEvent(events[i+1])" [event]="events[i+1]"></app-event-box>
+            <app-event-box (click)="selectEvent(events[i+2])" [event]="events[i+2]"></app-event-box>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  <div class="col-sm-1 col-md-1"></div>
+</div>
+

@@ -1,0 +1,49 @@
+.modal-body {
+  .login-modal-header {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 700;
+    padding: 1em;
+  }
+
+  .login-modal-body {
+    text-align: center;
+    font-size: 2em;
+    .input-container {
+      width: 85%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1em;
+      .form-control {
+        font-size: 1em !important;
+        height: 1.6em !important;
+      }
+    }
+    .error {
+      margin-top: .2em !important;
+      margin-bottom: .2em !important;
+      color: red;
+      text-align: left;
+      font-size: .6em;
+      .server-error {
+        text-align: center;
+      }
+    }
+
+    .login-link, .forgot-link {
+      color: #0d47a1;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .forgot-link {
+      margin-top: .2em;
+        font-size: .6em;
+    }
+    .forgot-links {
+      margin-top: .2em;
+      font-size: .6em;
+      margin-left: .2em;
+    }
+  }
+}

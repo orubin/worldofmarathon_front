@@ -1,0 +1,50 @@
+<div class="footer-container">
+  <div class="row">
+    <div class="col-sm-1 col-md-1"></div>
+
+    <div class="col-sm-10 col-md-10">
+      <div class="content-container">
+        <div class="row">
+          <div class="col-sm-3 col-md-3">
+            <div class="logo-container">
+              <div class="world">
+                WORLD OF
+              </div>
+              <div>
+                MARATHON
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-6">
+            <div class="app-links">
+              <div class="row">
+                <div class="col-sm-4 col-md-4" data-toggle="modal"  data-target="#generalModal" (click)="updateGeneralModal('about')">ABOUT</div>
+                <div class="col-sm-4 col-md-4"  data-toggle="modal" data-target="#generalModal" (click)="contactUs()">CONTACT US</div>
+                <!--<div class="col-sm-4 col-md-4">UPCOMING</div>-->
+                <div class="col-sm-4 col-md-4">COMMUNITY</div>
+              </div>
+
+              <!--<div class="row margin-row">-->
+                <!--<div class="col-sm-4 col-md-4">ACCOUNT</div>-->
+                <!--<div class="col-sm-4 col-md-4">PRIVACY</div>-->
+              <!--</div>-->
+            </div>
+          </div>
+
+          <div class="col-sm-3 col-md-3">
+            <div class="sign-up">
+              <div>SIGN UP TO OUR NEWSLETTER</div>
+              <div class="send-btn-container">
+                <app-text-input [placeholder]="'Email'"></app-text-input>
+                <app-button [text]="'SEND'" [classes]="'peru'"></app-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-1 col-md-1"></div>
+  </div>
+</div>

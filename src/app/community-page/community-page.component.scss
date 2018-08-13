@@ -1,0 +1,44 @@
+.community-header {
+  margin-top: 1em;
+  font-weight: bold;
+  font-size: 1.4em;
+  color: #0e7fb3;
+}
+
+.community-search-bar {
+  margin-top: 1em;
+  .sub-header {
+    font-weight: bold;
+    color: #0e7fb3;
+  }
+  .search-form {
+    display: flex;
+    margin-top: 1em;
+    border-bottom: 1px solid #c3c3c3;
+    padding-bottom: 1em;
+  }
+  .or-text {
+    line-height: 3.5em;
+    margin-left: 1em;
+    font-weight: bold;
+  }
+
+  .slider-container {
+    margin-right: 1em;
+    nouislider {
+      width: 21em;
+      margin-left: 1em;
+      margin-top: 1.5em;
+    }
+  }
+
+  .search-btn-container {
+    margin-top: .5em;
+    margin-left: 1em;
+    font-size: 1.5em;
+  }
+}
+
+.users-list {
+  margin-top: 2em;
+}

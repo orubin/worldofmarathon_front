@@ -1,0 +1,29 @@
+.search-form {
+  -webkit-filter: blur(1px);
+  background: #a88e61;
+  display: flex;
+  padding: 2em;
+  margin-top: 2em;
+  border-radius: 5px;
+  -webkit-box-shadow: 4px 4px 37px 5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 4px 37px 5px rgba(0,0,0,0.75);
+  box-shadow: 4px 4px 37px 5px rgba(0,0,0,0.75);
+  .form-control{
+    margin-left: 1em;
+    border: 2px solid #c1b49f;
+  }
+  .form-input-container {
+    margin-left: 1em;
+  }
+  app-button {
+    margin-left: 1em;
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+  /deep/ .mat-form-field-flex {
+    background: #dfc9a5 ;
+  }
+  .form-control {
+    background: #dfc9a5 !important;
+  }
+}

@@ -1,0 +1,72 @@
+<div class="event-page-container" [ngClass]="{'mobile': deviceDetectionService.isMobile()}">
+  <div class="tickets-form-container">
+    <div class="col-sm-3 col-md-3">
+      <div class="event-date">
+        {{this.eventDate | date:'dd.MM.yyyy'}}
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-3">
+      <div class="selector-container">
+        <select class="form-control" #eventSelector (change)="onEventSelect(eventSelector.value)">
+          <option *ngFor="let event of events" value="{{event.type}}"> {{event.type}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="col-sm-3 col-md-3">
+      <div class="selector-container">
+        <select class="form-control" #ticketsSelector (change)="onTicketsAmountChange(ticketsSelector.value)">
+          <option *ngFor="let number of tickets" value="{{number}}"> {{number}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="col-sm-3 col-md-3">
+      <!--<div class="package-btn-container">-->
+        <!--<app-button [text]="'ADD TO PACKAGE'"-->
+                    <!--[classes]="'peru box-shadow-lite'"-->
+                    <!--(click) = "addToPackage()">-->
+          <!---->
+        <!--</app-button>-->
+      <!--</div>-->
+    </div>
+  </div>
+
+  <div class="event-description-container">
+    {{description}}
+  </div>
+
+  <div class="map-container" *ngIf="mapData">
+    <div class="map-toggle">
+      <span class="map-option" (click)="updateMapView('route')" [ngClass]="{'active':mapView == 'route'}">ROUTE MAP </span>/
+      <span class="map-option" (click)="updateMapView('maps')" [ngClass]="{'active':mapView == 'maps'}"> GOOGLE MAPS VIEW</span>
+    </div>
+    <div class="map-container">
+      <div *ngIf="mapView === 'route'">
+        <div style="background-color:#fff;"> <iframe [src]="runmapLink | safe"> </iframe> <div style="margin: -4px 0 0 5px; height: 16px; color: #000; font-family: sans-serif; font-size: 12px;"> Route <a href="http://www.runmap.net/en/route/1525128-maratona-amsterdam/" style="color:#2a88ac; text-decoration:underline;" target="_blank">1,525,128</a> - powered by <a href="http://www.runmap.net" style="color:#2a88ac; text-decoration:underline;" target="_blank">www.runmap.net</a> </div>
+        </div>
+      </div>
+      <div *ngIf="mapView === 'maps'">
+        <agm-map [mapTypeControl] = "true" style="height: 30em" [zoom]="12" [latitude]="mapData.lat" [longitude]="mapData.lng">
+          <agm-marker [latitude]="mapData.lat" [longitude]="mapData.lng"></agm-marker>
+        </agm-map>
+      </div>
+    </div>
+  </div>
+
+  <div class="event-practicalities">
+    <div class="practicalities-header">
+      PRACTICALITIES
+    </div>
+    <div *ngFor="let practical of practicals; let i = index;">
+      <div class="row practs-row" *ngIf="i % 2 == 0">
+        <div class="col-sm-4 col-md-4">
+          <div class="pract-container" tooltip={{practicals[i].hover_text}} tooltipPlacement="top"><img src="../../assets/icons/{{practicals[i].iconLink}}.png"><label>{{practicals[i].name}}</label></div>
+        </div>
+        <div class="col-sm-4 col-md-4">
+          <div class="pract-container" tooltip={{practicals[i].hover_text}} *ngIf="i+1 < practicals.length" tooltipPlacement="top"><img src="../../assets/icons/{{practicals[i+1].iconLink}}.png"><label>{{practicals[i+1].name}}</label></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

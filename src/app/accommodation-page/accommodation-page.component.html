@@ -1,0 +1,52 @@
+<!--<div class="accom-search-form">-->
+  <!--<div class="location-input-container">-->
+    <!--<app-text-input [isDisabled]="true" [rightIcon]="'glyphicon glyphicon-map-marker'" [classes]="'boarded wide'" [placeholder]="'Amsterdam'"></app-text-input>-->
+  <!--</div>-->
+
+  <!--<div class="form-input-container date">-->
+    <!--<app-date-picker #hotelStartInput [placeholder]="'FROM'"></app-date-picker>-->
+  <!--</div>-->
+
+  <!--<div class="form-input-container date">-->
+    <!--<app-date-picker #hotelEndInput [placeholder]="'TO'"></app-date-picker>-->
+  <!--</div>-->
+
+  <!--<div class="form-input-container select">-->
+    <!--<select class="form-control" #guestSelector (change)="onGuestsSelect(guestSelector.value)">-->
+      <!--<option value = '' selected disabled>Guests</option>-->
+      <!--<option *ngFor="let guest of guests" value="{{guest}}"> {{guest}}</option>-->
+    <!--</select>-->
+  <!--</div>-->
+
+  <!--<div class="form-input-container select">-->
+    <!--<select class="form-control" #roomsSelector (change)="onRoomsSelect(roomsSelector.value)">-->
+      <!--<option value = '' selected disabled>Rooms</option>-->
+      <!--<option *ngFor="let room of rooms" value="{{room}}"> {{room}}</option>-->
+    <!--</select>-->
+  <!--</div>-->
+
+  <!--<div class="form-input-container btn-container">-->
+    <!--<app-button (click)="searchHotels()" [leftIcon]="'glyphicon glyphicon-search'" [classes]="'dark-gray'"></app-button>-->
+  <!--</div>-->
+<!--</div>-->
+
+<div class="accom-header">
+  Our recommendations
+</div>
+
+<div class="hotels-list">
+      <div class="stars">
+        <span (click)="hotelsCategory = '3'">
+          3 Stars
+        </span>
+        <span (click)="hotelsCategory = '4'">
+          4 Stars
+        </span>
+        <span (click)="hotelsCategory = '5'">
+          5 Stars
+        </span>
+      </div>
+  <div *ngFor="let hotel of hotels">
+    <app-hotel *ngIf="hotelsCategory === 'all' || hotelsCategory === hotel.stars_rating" [hotel]="hotel"></app-hotel>
+  </div>
+</div>

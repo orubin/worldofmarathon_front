@@ -1,0 +1,32 @@
+<div class="community-header">
+  MORE COMMUNITY MEMBERS PARTICIPATING IN AMSTERDAM MARATHON
+</div>
+<div class="community-search-bar">
+  <div class="sub-header">
+    SEARCH BY
+  </div>
+  <div class="search-form">
+    <app-text-input [classes]="'boarded padded'" [placeholder]="'NAME'" ></app-text-input>
+    <span class="or-text"> - OR TARGET SCORE -</span>
+    <div class="slider-container">
+      <nouislider [connect]="true" [min]="0" [max]="300" [(ngModel)]="targetScore"></nouislider>
+    </div>
+    <div class="search-btn-container">
+      <app-button (click)="searchHotels()" [leftIcon]="'glyphicon glyphicon-search'" [classes]="'blue'"></app-button>
+    </div>
+  </div>
+</div>
+
+<div class="users-list">
+  <div *ngFor="let user of users; let i = index; let even = even;">
+    <div *ngIf="even" class="row">
+      <div class="col-sm-6 col-md-6">
+        <app-user [user]="users[i]" ></app-user>
+      </div>
+
+      <div class="col-sm-6 col-md-6">
+        <app-user [user]="users[i+1]" ></app-user>
+      </div>
+    </div>
+  </div>
+</div>

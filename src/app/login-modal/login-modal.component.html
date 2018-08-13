@@ -1,0 +1,193 @@
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="login-modal-header" [ngSwitch]="view">
+          <div *ngSwitchCase= "'signup'">
+            SIGN UP
+          </div>
+
+          <div *ngSwitchCase="'login'">
+            Login
+          </div>
+
+          <div *ngSwitchCase="'forgot'">
+            FORGOT PASSWORD
+          </div>
+
+          <div *ngSwitchCase="'successRegister'">
+            Welcome, {{userName}}
+          </div>
+        </div>
+
+
+        <div class="login-modal-body">
+          <div [ngSwitch]="view">
+            <div *ngSwitchCase= "'signup'">
+              <div class="row">
+                <div class="input-container">
+                  <app-text-input [(model)]="userName" [classes]="'xlarge'" [placeholder]="'Name'"></app-text-input>
+                  <div class="error" *ngIf="!userNameValidator">
+                    Field required
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-container">
+                  <app-text-input [(model)]="signupEmail" [classes]="'xlarge'"[placeholder]="'Email'"></app-text-input>
+                  <div class="error" *ngIf="!signupEmailValidator">
+                    Field required
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-container">
+                  <app-text-input [(model)]="signupPassword" [type]="'password'" [classes]="'xlarge'"[placeholder]="'Password'"></app-text-input>
+                  <div class="error" *ngIf="!signupPasswordValidator">
+                    Field required
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-container">
+                  <app-text-input [(model)]="signupRepeatPassword" [type]="'password'" [classes]="'xlarge'"[placeholder]="'Repeat Password'"></app-text-input>
+                  <div class="error" *ngIf="!repeatPasswordValidator">
+                    Field required
+                  </div>
+                  <div class="error" *ngIf="!unmatchpasswords">
+                    Passwords do not match
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-container">
+                  <app-text-input [(model)]="userTargertScore" [classes]="'xlarge'" [placeholder]="'Target score'"></app-text-input>
+                </div>
+              </div>
+
+              <div class="error server-error">
+                <div *ngIf="registrationError">
+                  {{registrationErrorMsg}}
+                </div>
+
+                <div *ngIf="loginError">
+                  {{loginErrorMsg}}
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="input-container">
+                  <div class="btn-container">
+                    <app-button [classes]="'dark-gray xlarge'" (click)="sendForm('signup')" [text]="'SEND'"></app-button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-container">
+                  <div class="btn-container">
+                    <app-button [classes]="'blue xlarge'" [text]="'CONNECT WITH Facebook'"></app-button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div *ngSwitchCase="'login'">
+              <div class="row">
+                <div class="input-container">
+                  <app-text-input  [(model)]="loginEmail" [classes]="'xlarge'"[placeholder]="'Email'"></app-text-input>
+                  <div class="error" *ngIf="!loginEmailValidator">
+                    Field required
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-container">
+                  <app-text-input [(model)]="loginPass" [type]="'password'" [classes]="'xlarge'"[placeholder]="'Password'"></app-text-input>
+                  <div class="error" *ngIf="!loginPassValidator">
+                      Field required
+                  </div>
+                </div>
+              </div>
+
+              <div class="error server-error">
+                <div *ngIf="loginError">
+                  {{loginErrorMsg}}
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-container">
+                  <div class="btn-container">
+                    <app-button [classes]="'dark-gray xlarge'" (click)="sendForm('login')" [text]="'SEND'"></app-button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- <div class="row">
+                <div class="input-container">
+                  <div class="btn-container">
+                    <app-button [classes]="'blue xlarge'" [text]="'LOGIN WITH Facebook'"></app-button>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+
+            <div *ngSwitchCase="'forgot'">
+              <div class="row">
+                <div class="input-container">
+                  <app-text-input  [(model)]="forgotEmail" [classes]="'xlarge'"[placeholder]="'Email'"></app-text-input>
+                  <div class="error" *ngIf="!forgotEmailValidator">
+                    Filed required
+                  </div>
+                </div>
+              </div>
+              <div class="error server-error">
+                <div *ngIf="forgotError">
+                  {{forgotErrorMsg}}
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-container">
+                  <div class="btn-container">
+                    <app-button [classes]="'dark-gray xlarge'" (click)="sendForm('forgot')" [text]="'SEND'"></app-button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div [ngSwitch]="view">
+              <div *ngSwitchCase= "'signup'">
+                Already a member? <span (click)="switchView('login')" class="login-link"> Login </span>
+
+              </div>
+
+              <div *ngSwitchCase="'login'">
+                <div>Not a member yet? <span (click)="switchView('signup')" class="login-link"> Sign up </span></div>
+                <div class="forgot-link" (click)="switchView('forgot')">Forgot your password?</div>
+              </div>
+
+              <div *ngSwitchCase="'forgot'">
+                <div class="forgot-links">
+                  <div><span (click)="switchView('signup')" class="login-link"> Sign up </span></div>
+                  <div><span (click)="switchView('login')" class="login-link"> Login </span></div>
+                </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>

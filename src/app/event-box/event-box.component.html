@@ -1,0 +1,55 @@
+<div class="col-sm-4 col-md-4">
+  <div class="event-container" [ngClass]="{'mobile': deviceDetectionService.isMobile()}">
+    <div class="image-container">
+      <img src="{{event.images[1]}}">
+    </div>
+    <div class="event-header">
+      {{event.name}}
+    </div>
+    <div class="ranking">
+      <span class="ranking-stars">
+        <span *ngFor="let star of communityRanking">
+          <i class ="glyphicon glyphicon-star"></i>
+        </span>
+      </span>
+    </div>
+
+    <div class="date">
+      <div class="visableDate">
+        {{event.date | date:'dd.MM.yyyy'}}
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="row">
+        <div class="col-sm-4 col-md-4" align="center">
+          <div class="icon-container no-margin">
+            <app-round-image [classes]="'small'" [imageName]="'flags/' + event.country + '.png'"></app-round-image>
+            <span class="country-name"> {{event.country}}</span>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-4" align="center">
+          <div class="icon-container">
+            <app-round-image [classes]="'small'" [imageName]="'icons/' + event.difficulty.toLowerCase() + '.png'"></app-round-image>
+            <div>{{event.difficulty.charAt(0).toUpperCase() + event.difficulty.substr(1).toLowerCase()}}</div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-4" align="center">
+          <div class="icon-container">
+            <app-round-image [classes]="'small'" [imageName]="'icons/' + event.weather_icon + '.png'"></app-round-image>
+            <div class="weather-label">{{event.weather}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="average">
+      <div class="avg-header">Record:</div>
+      <div>Men:   {{menRec}}</div>
+      <div>Women: {{womenRec}}</div>
+    </div>
+
+    <div class="btn-container">
+      <app-button [text]="'LETS RUN'" [classes]="'peru'"></app-button>
+    </div>
+  </div>
+</div>

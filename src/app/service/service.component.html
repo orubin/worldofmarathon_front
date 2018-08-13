@@ -1,0 +1,24 @@
+<div class="service-container">
+  <div class="service-image-container">
+    <img src="{{service.imageLink}}">
+  </div>
+  <div class="service-header"> {{service.name}} </div>
+  <div class="order-bar">
+    <div class="select-container" *ngIf="service.amountAvailable">
+      <select class="form-control" #serviceTicketsSelector (change)="onTicketsAmountChange(serviceTicketsSelector.value)">
+        <option *ngFor="let number of ticketsAmount" value="{{number}}"> {{number}}</option>
+      </select>
+    </div>
+    <div class="price" *ngIf="service.price">
+      ${{service.price}}
+    </div>
+    <div class="btn-container"  [ngClass]="service.price ? 'short' : 'wide'">
+      <app-button [text]="buttonText"  [classes]="'peru'" [rightIcon]="'glyphicon glyphicon-chevron-right'" (click)="addAServiceToPackage()"></app-button>
+    </div>
+  </div>
+  <div class="community-ranking-container">
+    community ranking:
+    <span *ngFor="let star of rankingAmount"><i class="glyphicon glyphicon-star"></i></span>
+    <span *ngFor="let star of emptyRankingAmount"><i class="glyphicon glyphicon-star-empty"></i></span>
+  </div>
+</div>

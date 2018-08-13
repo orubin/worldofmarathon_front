@@ -1,0 +1,61 @@
+.inner-addon {
+  position: relative;
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  pointer-events: none;
+  font-size: 1.2em;
+  top: .6em;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  .7em;}
+.right-addon .glyphicon { right: .7em;}
+
+/* add padding  */
+
+.left-addon input  {
+  padding: .5em .5em .5em 3em;
+}
+.right-addon input {
+  padding: .5em 3em .5em .5em;
+}
+
+.boarded {
+  border: 1px solid;
+  .glyphicon {
+    top:0 !important;
+  }
+}
+
+.rounded {
+  padding-left: 5px;
+  border-radius: 1em;
+}
+
+.xlarge {
+  width: 100%;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  text-align: center;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  text-align: center;
+}
+
+:-ms-input-placeholder {
+  text-align: center;
+}
+
+
+.padded {
+  padding: 1em;
+}

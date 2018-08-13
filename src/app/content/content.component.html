@@ -1,0 +1,11 @@
+<div [ngSwitch]="currentContent">
+  <app-event-page *ngSwitchCase="'event'"></app-event-page>
+    <app-place-page *ngSwitchCase="'place'"></app-place-page>
+  <div *ngSwitchCase="'trans'">
+    <img class="coming-soon" src="../../assets/images/general/coming_soon.png">
+  </div>
+  <app-accommodation-page *ngSwitchCase="'accom'"></app-accommodation-page>
+  <app-services-page *ngSwitchCase="'services'"></app-services-page>
+  <app-community-page *ngSwitchCase="'community'"></app-community-page>
+  <div *ngSwitchDefault>default</div>
+</div>

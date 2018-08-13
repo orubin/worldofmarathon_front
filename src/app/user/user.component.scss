@@ -1,0 +1,28 @@
+.user-container {
+  display: flex;
+  margin-bottom: 2em;
+  font-size: 1.3em;
+  .user-image-container {
+    margin-right: 3em;
+    .on-top-image {
+      position: relative;
+      bottom: 1em;
+    }
+  }
+
+  .user-stats {
+    .btn-container {
+      margin-top: 1em;
+    }
+
+    .personal-data {
+      .name {
+        font-weight: bolder;
+      }
+    }
+
+    .events-count {
+      font-weight: bold;
+    }
+  }
+}

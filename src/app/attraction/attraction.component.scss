@@ -1,0 +1,71 @@
+.attraction-container {
+  margin-top: 1em;
+  border: 1px solid #c3c3c3;
+  -webkit-box-shadow: 5px 2px 19px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px 2px 19px -6px rgba(0,0,0,0.75);
+  box-shadow: 5px 2px 19px -6px rgba(0,0,0,0.75);
+  padding: 0 1em 0 1em;
+  .right-board {
+    border-right: 1px dashed #a6a6a6;
+  }
+  .attraction-name {
+    margin-bottom: .2em;
+    font-size: 1.5em;
+    font-weight: bolder;
+  }
+  .attraction-date, .attraction-location {
+    margin-bottom: .2em;
+    color: #a6a6a6;
+  }
+
+  .attraction-price-section {
+
+  }
+
+  .attending-container {
+    display: flex;
+    padding-bottom: 1em;
+    app-round-image {
+      margin-left: 1em;
+    }
+    .and-more {
+      font-size: 1.1em;
+      font-weight: 400;
+    }
+  }
+
+  .tickets-padding {
+    padding: 1em;
+  }
+
+  .tickets-table {
+    width: 100%;
+    .td-center {
+      text-align: center;
+    }
+    .price {
+      font-weight: bold;
+      font-size: 1.5em;
+
+    }
+    .selector-container {
+      width: 5em;
+      .form-control {
+        border-color: #333333;
+        color: #333333;
+      }
+    }
+  }
+
+
+  .price-container {
+    font-weight: 700;
+    display: flex;
+    .form-control {
+      width: 5em;
+    }
+  }
+  .add-btn-container {
+    margin-top:1em
+  }
+}

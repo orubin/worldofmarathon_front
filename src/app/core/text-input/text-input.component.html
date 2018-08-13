@@ -1,0 +1,10 @@
+<div class="inner-addon" [ngClass]="{'left-addon': leftIcon, 'right-addon': rightIcon}">
+  <i *ngIf="leftIcon" class="{{leftIcon}}"></i>
+  <input type="{{type}}"
+         [(ngModel)]="model"
+         (ngModelChange)="onModelChange($event)"
+         [disabled]="isDisabled"
+         class="{{classes}}"
+         placeholder="{{placeholder}}">
+  <i *ngIf="rightIcon" class="{{rightIcon}}"></i>
+</div>

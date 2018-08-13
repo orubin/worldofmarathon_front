@@ -1,0 +1,24 @@
+<div class="user-container">
+    <div class="user-image-container">
+      <app-round-image [classes]="'round-image big'" [imageName]="user.imageUrl"></app-round-image>
+      <app-round-image class="on-top-image" [classes]="'small'" [imageName]="user.countryUrl"></app-round-image>
+    </div>
+    <div class="user-stats">
+      <div class="personal-data">
+        <span class="name">{{user.name}}</span>
+        <span class="age">, {{user.age}} </span>
+      </div>
+      <div class="event">
+        {{user.event}}
+      </div>
+      <div class="events-count">
+        Marathon No {{user.marathonsCount}}
+      </div>
+      <div class="target">
+        Target score: {{user.targetScore}}
+      </div>
+      <div class="btn-container">
+        <app-button (click)="connectUser(connectinUser)" [text]="'CONNECT'" [classes]="'blue box-shadow-lite'"></app-button>
+      </div>
+    </div>
+</div>

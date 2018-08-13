@@ -1,0 +1,26 @@
+.mat-input-flex.mat-form-field-flex{
+  border: 1px solid black;
+  padding: 0;
+  color: #333333;
+  width: 8em;
+  padding-left: .5em;
+}
+
+.mat-input-element:disabled {
+  color: #333333;
+}
+
+.mat-form-field-infix {
+  padding: 0;
+  position: static !important;
+  width: auto !important;
+}
+
+.mat-form-field-label-wrapper {
+  left: 10px !important;
+  top: -5px !important;
+}
+
+button.mat-icon-button {
+  font-size: 1.5em !important;
+}

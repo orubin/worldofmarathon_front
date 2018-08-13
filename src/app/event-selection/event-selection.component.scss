@@ -1,0 +1,21 @@
+.search-bar-container {
+  text-align: center;
+  .search-header {
+    font-size: 2em;
+    font-weight: bolder;
+  }
+}
+
+.events-container {
+  margin-top: 2em;
+  border-top: 1px solid #c3c3c3;
+  .events-header {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bolder;
+    margin-bottom: 1em;
+  }
+  app-event-box {
+    cursor: pointer;
+  }
+}

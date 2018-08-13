@@ -1,0 +1,62 @@
+.navbar-default {
+  background: white;
+  margin-bottom: 0em !important;
+}
+.container-fluid {
+  font-size: 1.2em;
+}
+
+.navbar-subheader{
+  position: absolute;
+  top: 60%;
+  left: 20%;
+  font-size: 1.2em;
+}
+.navbar-nav {
+  float: right ;
+  background: white;
+}
+.mobile {
+  float: left;
+  .glyphicon-star {
+    margin-left: 0;
+  }
+}
+
+.search-container {
+  margin-top: 1em;
+
+}
+
+.image-container {
+  display: grid;
+  label {
+    margin-top: .3em;
+  }
+}
+
+.app-link {
+  line-height: 2em;
+}
+
+.glyphicon-star-empty {
+  font-size: 2em;
+  margin-left: -0.5em;
+  margin-right: .1em;
+}
+
+.logo {
+  height: 4em;
+  padding: 5px;
+}
+
+.mobile-logo {
+  height: 2.5em !important;
+}
+
+.nav>li>a {
+  display: flex;
+  app-round-image {
+    margin-right: .5em;
+  }
+}
