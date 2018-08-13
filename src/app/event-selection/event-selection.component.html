@@ -18,8 +18,13 @@
         <div *ngFor="let event of events; let i = index;">
           <div *ngIf="i % 3 == 0" class="row">
             <app-event-box (click)="selectEvent(events[i])" [event]="events[i]"></app-event-box>
-            <app-event-box (click)="selectEvent(events[i+1])" [event]="events[i+1]"></app-event-box>
-            <app-event-box (click)="selectEvent(events[i+2])" [event]="events[i+2]"></app-event-box>
+            <div *ngIf="i+1 < events.length" >
+                <app-event-box (click)="selectEvent(events[i+1])" [event]="events[i+1]"></app-event-box>
+            </div>
+            <div *ngIf="i+2 < events.length" >
+                <app-event-box (click)="selectEvent(events[i+2])" [event]="events[i+2]"></app-event-box>
+            </div>
+            
           </div>
         </div>
 
