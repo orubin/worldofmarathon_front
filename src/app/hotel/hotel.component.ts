@@ -17,7 +17,7 @@ export class HotelComponent implements OnInit {
   ngOnInit() {
     let communityStars = this.hotel.community_rating;
     if (communityStars === '') {
-      communityStars = 2;
+      communityStars = 0;
     }
     for (let i = 0; i< communityStars; i++ ) {
       this.hotelCommunityStars.push(i);

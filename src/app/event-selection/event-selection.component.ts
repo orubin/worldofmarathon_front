@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Marathon} from "../models/marathon"
 import { ApiService} from "../services/api.service"
 import { TotalPackageService } from "../services/total-package.service"
-import { Subscription} from "rxjs/Subscription";
+import { Subscription } from "rxjs/Subscription";
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-event-selection',
@@ -15,13 +16,24 @@ export class EventSelectionComponent implements OnInit {
   public marathons : Array<Marathon>;
   eventsSubscription: Subscription;
 
-  constructor(public apiService: ApiService, public totalPackageService: TotalPackageService) { }
+  constructor(public apiService: ApiService, 
+    public totalPackageService: TotalPackageService,
+    private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.apiService.getEvents();
 
     this.eventsSubscription = this.apiService.eventsSelectionEmitter.subscribe((data)=> {
       this.events = data;
+      this.activatedRoute.queryParams.subscribe((params: Params) => {
+      
+        let marathon = params['marathon'];
+        if(marathon === 'jerusalem'){
+          console.log(this.events);
+          this.selectEvent(this.events[6]);
+        }
+        
+      });
     });
   }
 

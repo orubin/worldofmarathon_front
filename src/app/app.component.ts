@@ -1,8 +1,9 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import { TotalPackageService} from "./services/total-package.service";
 import { DeviceDetectionService } from "./services/device-detection.service";
-import { ApiService } from "./services/api.service"
-import { Subscription} from "rxjs/Subscription";
+import { ApiService } from "./services/api.service";
+import { Subscription } from "rxjs/Subscription";
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -38,11 +39,26 @@ export class AppComponent implements OnInit {
     this.oldYValue = this.newYValue;
   }
 
-  constructor(public totalPackageService: TotalPackageService, public deviceDetectionService: DeviceDetectionService, public apiService: ApiService) { }
-
+  constructor(public totalPackageService: TotalPackageService, 
+    public deviceDetectionService: DeviceDetectionService, 
+    public apiService: ApiService,
+    private activatedRoute: ActivatedRoute) { }
 
   ngOnInit () {
     this.isMobile = this.deviceDetectionService.isMobile();
+
+    this.activatedRoute.queryParams.subscribe((params: Params) => {
+      
+      let marathon = params['marathon'];
+      if(marathon === 'jerusalem'){
+        this.searchBar = false;
+        this.allEventsLoaded = true;
+        this.apiService.getEventData(14);
+        //this.totalPackageService.eventSelectedEmitter.emit(true);
+      }
+      
+    });
+
     this.eventSelectedSubscription = this.totalPackageService.eventSelectedEmitter.subscribe((data)=> {
       if(data) {
         this.isEventLoaded = true;
