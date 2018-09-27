@@ -8,13 +8,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="/"><img src="../assets/images/general/logo.svg" class="logo" [ngClass]="{'mobile-logo':  deviceDetectionService.isMobile()}"></a>
+      <a href="/"><img src="../assets/images/general/logo.svg" class="logo" [ngClass]="{'mobile-logo': deviceDetectionService.isMobile()}"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav" [ngClass]="{'mobile': deviceDetectionService.isMobile()}" >
-        <li><a class="app-link" href="#">Community</a></li>
+        <li><a class="app-link" href="https://www.facebook.com/World-of-Marathon-1587479624701858/">Community</a></li>
         <!--<li><a class="app-link" href="#">Upcoming</a></li>-->
         <li><a class="app-link" href="#" data-toggle="modal" data-target="#generalModal" (click)="updateGeneralModal('about')">About</a></li>
         <li><a class="app-link" href="#"  *ngIf="isLogged">Account</a></li>

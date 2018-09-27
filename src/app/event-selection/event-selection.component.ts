@@ -26,13 +26,10 @@ export class EventSelectionComponent implements OnInit {
     this.eventsSubscription = this.apiService.eventsSelectionEmitter.subscribe((data)=> {
       this.events = data;
       this.activatedRoute.queryParams.subscribe((params: Params) => {
-      
         let marathon = params['marathon'];
         if(marathon === 'jerusalem'){
-          console.log(this.events);
           this.selectEvent(this.events[6]);
         }
-        
       });
     });
   }
