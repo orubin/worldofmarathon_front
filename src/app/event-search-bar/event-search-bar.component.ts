@@ -10,6 +10,23 @@ export class EventSearchBarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  onTypeChange(change){
+
+  }
+
+  onDifficultySelectorChange(change){
+
+  }
+
+  onWeatherSelectorSelectorChange(change){
+
+  }
+
+onEnvironmentSelectorChange(change){
+
   }
 
 }

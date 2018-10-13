@@ -26,19 +26,23 @@ export class EventPageComponent implements OnInit {
               public apiService: ApiService,
               public deviceDetectionService: DeviceDetectionService) { }
 
-  ngOnInit() {
-    this.apiService.eventDataEmitter.subscribe((response)=> {
-      this.eventDate = response.date;
-      this.description = response.description;
-      this.mapData.lat = parseFloat(response.latitude);
-      this.mapData.lng = parseFloat(response.longitude);
-      this.practicals = response.practicles;
+  ngOnInit() {   
+    if(this.totalPackageService.selectedEvent) { 
+    // this.apiService.eventDataEmitter.subscribe((response)=> {
+      this.eventDate = this.totalPackageService.selectedEvent.date;
+      this.description = this.totalPackageService.selectedEvent.description;
+      this.mapData.lat = parseFloat(this.totalPackageService.selectedEvent.latitude);
+      this.mapData.lng = parseFloat(this.totalPackageService.selectedEvent.longitude);
+      this.practicals = this.totalPackageService.selectedEvent.practicles;
       this.events = this.totalPackageService.selectedEvent.run_types;
       this.selectedEvent = this.events[0];
-      this.runmapLink = response.run_map + '?width=740&amp;height=660;extended=1&amp;distance_markers=1&amp;unit_type=metric&amp;elevation=true" width="760" height="588" border="0" frameborder="0" marginheight="0" marginwidth="0" scrolling="no"';
+      this.runmapLink = this.totalPackageService.selectedEvent.run_map + '?width=740&amp;height=660;extended=1&amp;distance_markers=1&amp;unit_type=metric&amp;elevation=true" width="760" height="588" border="0" frameborder="0" marginheight="0" marginwidth="0" scrolling="no"';
 
-    });
-    if(this.totalPackageService.selectedEvent) {
+    // });
+    // if(!this.eventDate){
+    //   this.eventDate = this.totalPackageService.selectedEvent.date;
+    // }
+    //if(this.totalPackageService.selectedEvent) {
       this.events = this.totalPackageService.selectedEvent.run_types;
     }
     this.tickets = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];

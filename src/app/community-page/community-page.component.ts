@@ -17,4 +17,8 @@ export class CommunityPageComponent implements OnInit {
     this.users = this.apiService.community;
   }
 
+  searchHotels(){
+    
+  }
+
 }

@@ -11,6 +11,7 @@ export class HomepageComponent implements OnInit {
   constructor(public apiService: ApiService) { }
 
   ngOnInit() {
+    
   }
 
   liveEvents() {

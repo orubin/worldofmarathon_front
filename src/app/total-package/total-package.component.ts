@@ -1,3 +1,7 @@
+
+import {interval as observableInterval} from 'rxjs';
+
+import {map} from 'rxjs/operators';
 import { Component, OnInit,  ElementRef, OnDestroy  } from '@angular/core';
 import { Observable, Subscription } from 'rxjs/Rx';
 import { TotalPackageService} from "../services/total-package.service"
@@ -24,10 +28,10 @@ export class TotalPackageComponent implements OnInit {
   ngOnInit() {
     this.eventDate =  this.totalPackageService.selectedEvent.date;
     this.future = new Date(this.eventDate);
-    this.$counter = Observable.interval(1000).map((x) => {
+    this.$counter = observableInterval(1000).pipe(map((x) => {
       this.diff = Math.floor((this.future.getTime() - new Date().getTime()) / 1000);
       return x;
-    });
+    }));
 
     this.subscription = this.$counter.subscribe((x) => this.timer = this.dhms(this.diff));
   }

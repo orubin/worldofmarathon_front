@@ -1,11 +1,12 @@
 import { Routes } from '@angular/router';
 
-import { EventHeaderComponent } from './event-header/event-header.component';
+import { EventComponent } from './event/event.component';
 import { EventSelectionComponent } from './event-selection/event-selection.component';
-import { AppComponent } from '../app/app.component'
+import { HomepageComponent } from './homepage/homepage.component';
+import { AppComponent } from '../app/app.component';
 
 export const ROUTES: Routes = [
-  { path: '', component: AppComponent},
-  { path: 'event', component: EventHeaderComponent },
+  { path: '', component: HomepageComponent },
+  { path: 'marathons/:id', component: EventComponent },
   { path: 'select', component: EventSelectionComponent },
 ];

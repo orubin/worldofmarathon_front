@@ -38,4 +38,8 @@ export class ServiceComponent implements OnInit {
     this.ticketsSelected = value;
   }
 
+  addAServiceToPackage(){
+    
+  }
+
 }

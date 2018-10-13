@@ -1,7 +1,8 @@
-import {EventEmitter, Injectable} from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Place} from "../models/place";
-import {Hotel} from "../models/hotel";
+import { Place } from "../models/place";
+import { Hotel } from "../models/hotel";
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ApiService {
@@ -35,12 +36,17 @@ export class ApiService {
   // create method
   public post(path:string, body:any) {
     let endpoint = this.API_URL + path;
-    return this.http.post(endpoint,body);
+    return this.http.post(endpoint, body);
   }
   // delete method
   public delete(path:string){
     let endpoint = this.API_URL + path;
     return this.http.delete(endpoint);
+  }
+
+  getAny(eventId): Observable<any> {
+    let body = { id: eventId };
+    return this.http.post<any>(this.API_URL + "marathons/get_marathon", body); // request options as second parameter
   }
 
   getEvents() {

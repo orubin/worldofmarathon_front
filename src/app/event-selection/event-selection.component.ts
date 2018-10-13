@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Marathon} from "../models/marathon"
-import { ApiService} from "../services/api.service"
-import { TotalPackageService } from "../services/total-package.service"
-import { Subscription } from "rxjs/Subscription";
+import { Marathon } from "../models/marathon";
+import { ApiService } from "../services/api.service";
+import { TotalPackageService } from "../services/total-package.service";
+import { Subscription } from "rxjs";
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
@@ -16,7 +16,7 @@ export class EventSelectionComponent implements OnInit {
   public marathons : Array<Marathon>;
   eventsSubscription: Subscription;
 
-  constructor(public apiService: ApiService, 
+  constructor(private router: Router, public apiService: ApiService, 
     public totalPackageService: TotalPackageService,
     private activatedRoute: ActivatedRoute) { }
 
@@ -38,6 +38,8 @@ export class EventSelectionComponent implements OnInit {
     this.totalPackageService.selectedEvent = event;
     this.apiService.getEventData(event.id);
     this.totalPackageService.eventSelectedEmitter.emit(true);
+    this.router.navigate([`../marathons/${event.id}`], { relativeTo: this.activatedRoute });
+    window.scrollTo(0, 0);
   }
 
 }

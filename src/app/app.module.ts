@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { FormsModule } from "@angular/forms";
@@ -60,6 +59,7 @@ import {MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatInputMo
 import { NouisliderModule } from 'ng2-nouislider';
 import { DeviceDetectorModule } from 'ngx-device-detector';
 import { TooltipModule } from "ngx-tooltip";
+import { EventComponent } from './event/event.component';
 
 
 
@@ -95,19 +95,20 @@ import { TooltipModule } from "ngx-tooltip";
     ImageBarComponent,
     SafePipe,
     EventSearchBarComponent,
-    GeneralModalComponent
+    GeneralModalComponent,
+    EventComponent
   ],
   imports: [
     BrowserModule,
     SlickModule.forRoot(),
-    HttpModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBh-ap_SPo9ipvpljxjQ2k_Kuf5UQvYEUY'
     }),
     RouterModule.forRoot(ROUTES, {
-      useHash: Boolean(history.pushState) === false,
-      preloadingStrategy: PreloadAllModules
+      // useHash: Boolean(history.pushState) === false,
+      // preloadingStrategy: PreloadAllModules
     }),
     MatDatepickerModule,
     MatNativeDateModule,

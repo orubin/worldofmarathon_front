@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription} from "rxjs/Subscription";
+import { Subscription} from "rxjs";
 import { DeviceDetectionService} from "../services/device-detection.service";
 import { ApiService } from "../services/api.service";
 import { TotalPackageService } from "../services/total-package.service"

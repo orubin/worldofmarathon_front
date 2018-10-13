@@ -1,7 +1,8 @@
-<div [ngClass]="scrollUp ? 'sticky' : ' '" *ngIf="allEventsLoaded || searchBar">
+<!-- <div [ngClass]="scrollUp ? 'sticky' : ' '" *ngIf="allEventsLoaded || searchBar">
   <app-header-component></app-header-component>
 </div>
 <app-homepage *ngIf="searchBar"></app-homepage>
+
 <div *ngIf="!isEventLoaded && !searchBar">
   <app-event-selection></app-event-selection>
 </div>
@@ -39,6 +40,18 @@
   </div>
 </div>
 <app-footer *ngIf="allEventsLoaded"></app-footer>
+
+<app-login-modal></app-login-modal>
+<app-carousel-modal></app-carousel-modal>
+<app-general-modal [text]="generalModalText" [title]="generalModalTitle"></app-general-modal> -->
+
+<div [ngClass]="scrollUp ? 'sticky' : ' '" *ngIf="allEventsLoaded || searchBar">
+  <app-header-component></app-header-component>
+</div>
+
+<router-outlet></router-outlet>
+
+<app-footer></app-footer>
 
 <app-login-modal></app-login-modal>
 <app-carousel-modal></app-carousel-modal>

@@ -1,6 +1,7 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { Subscription } from 'rxjs/Subscription';
-import { Http, Response, URLSearchParams } from '@angular/http';
+import { Subscription } from 'rxjs';
+import { Response, URLSearchParams } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class TotalPackageService {
@@ -30,7 +31,8 @@ export class TotalPackageService {
       total: 0,
     }
   };
-  constructor(public http: Http) {
+  
+  constructor(public http: HttpClient) {
 
   }
 

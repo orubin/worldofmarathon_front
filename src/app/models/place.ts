@@ -3,6 +3,7 @@ export class Place{
     public name: string;
     public description: string;
     public country: string;
+    public images: Array<any>[];
     public img_url1: string;
     public img_url2: string;
     public img_url3: string;

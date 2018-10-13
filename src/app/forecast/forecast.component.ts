@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from "rxjs/Subscription";
+import { Subscription } from "rxjs";
 import { WeatherService } from '../services/weather.service'
 // import { ProgressBarService.} from "../services/progressBar.service"
 

@@ -3,7 +3,7 @@ import { TotalPackageService } from '../services/total-package.service';
 import { ProgressBarService} from "../services/progress-bar.service";
 import { DeviceDetectionService} from "../services/device-detection.service";
 import { ApiService} from "../services/api.service"
-import {Subscription} from "rxjs/Subscription";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-progress-bar',
@@ -65,19 +65,19 @@ export class ProgressBarComponent implements OnInit {
         this.skipped[i] = false;
       }
     }
-    window.scrollTo(0, 0);
+    //window.scrollTo(0, 0);
     this.progressBarService.contentUpdatedEmitter.emit(value);
   }
 
   updateProgressBarMobile(direction) {
-    if( (this.mobileCenter === 1 && direction === 'back')  || (this.mobileCenter === 4 && direction === 'froward')) {
+    if( (this.mobileCenter === 1 && direction === 'back') || (this.mobileCenter === 4 && direction === 'forward')) {
       return;
     }
 
-    if( direction === 'back') {
+    if(direction === 'back') {
       this.mobileCenter--;
     } else {
-      this.mobileCenter ++;
+      this.mobileCenter++;
     }
     // this.progressBarService.contentUpdatedEmitter.emit(value);
 

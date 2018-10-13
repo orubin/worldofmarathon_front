@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { TotalPackageService } from "../services/total-package.service"
-import {DeviceDetectionService} from "../services/device-detection.service";
+import { DeviceDetectionService } from "../services/device-detection.service";
 import { Marathon } from '../models/marathon';
-import {Subscription} from "rxjs/Subscription";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-event-header',

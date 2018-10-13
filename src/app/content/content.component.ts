@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 import { TotalPackageService } from "../services/total-package.service";
 import { ApiService} from "../services/api.service"
 import { ProgressBarService } from "../services/progress-bar.service";

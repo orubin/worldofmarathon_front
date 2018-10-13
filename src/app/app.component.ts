@@ -1,8 +1,8 @@
-import {Component, HostListener, OnInit} from '@angular/core';
-import { TotalPackageService} from "./services/total-package.service";
+import { Component, HostListener, OnInit } from '@angular/core';
+import { TotalPackageService } from "./services/total-package.service";
 import { DeviceDetectionService } from "./services/device-detection.service";
 import { ApiService } from "./services/api.service";
-import { Subscription } from "rxjs/Subscription";
+import { Subscription } from "rxjs";
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
