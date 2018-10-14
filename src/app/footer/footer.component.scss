@@ -1,5 +1,5 @@
 .footer-container {
-  height: 10em;
+  height: 22vh;
   background: #3A3A3A;
   color: white;
   .content-container {
@@ -16,12 +16,14 @@
         color: #c09348;
       }
     }
+    a {color: white; text-decoration: none;}
     .app-links {
       font-weight: 600;
       .margin-row {
         margin-top: .5em;
       }
     }
+    
     .sign-up {
       font-weight: 600;
       margin-bottom: .5em;

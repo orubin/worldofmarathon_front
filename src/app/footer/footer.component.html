@@ -19,27 +19,28 @@
           <div class="col-sm-6 col-md-6">
             <div class="app-links">
               <div class="row">
-                <div class="col-sm-4 col-md-4" data-toggle="modal"  data-target="#generalModal" (click)="updateGeneralModal('about')">ABOUT</div>
-                <div class="col-sm-4 col-md-4"  data-toggle="modal" data-target="#generalModal" (click)="contactUs()">CONTACT US</div>
+                <div class="col-sm-4 col-md-4 col-xs-4" data-toggle="modal"  data-target="#generalModal" (click)="updateGeneralModal('about')">ABOUT</div>
+                <div class="col-sm-4 col-md-4 col-xs-4" data-toggle="modal" data-target="#generalModal" (click)="contactUs()">CONTACT US</div>
                 <!--<div class="col-sm-4 col-md-4">UPCOMING</div>-->
                 <a href="https://www.facebook.com/World-of-Marathon-1587479624701858/">
-                  <div class="col-sm-4 col-md-4" >COMMUNITY</div>
+                  <div class="col-sm-4 col-md-4 col-xs-4">COMMUNITY</div>
                 </a>
               </div>
 
-              <!--<div class="row margin-row">-->
+              <div class="row margin-row">
                 <!--<div class="col-sm-4 col-md-4">ACCOUNT</div>-->
-                <!--<div class="col-sm-4 col-md-4">PRIVACY</div>-->
-              <!--</div>-->
+                <!-- <a routerLink="/privacy" routerLinkActive="active"><div class="col-sm-4 col-md-4">PRIVACY</div></a> -->
+                <a class="col-sm-4 col-md-4" routerLink="/privacy" routerLinkActive="active">PRIVACY</a>
+              </div>
             </div>
           </div>
 
-          <div class="col-sm-3 col-md-3">
+          <div class="col-sm-3 col-md-3 col-xs-12 text-md-left text-center">
             <div class="sign-up">
               <div>SIGN UP TO OUR NEWSLETTER</div>
-              <div class="send-btn-container">
-                <app-text-input [placeholder]="'Email'"></app-text-input>
-                <app-button [text]="'SEND'" [classes]="'peru'"></app-button>
+              <div class="send-btn-container col-xs-12">
+                <app-text-input [placeholder]="'Email'" class="col-xs-8 col-md-8"></app-text-input>
+                <app-button [text]="'SEND'" [classes]="'peru'" class="col-md-4"></app-button>
               </div>
             </div>
           </div>

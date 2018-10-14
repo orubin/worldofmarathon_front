@@ -60,6 +60,9 @@ import { NouisliderModule } from 'ng2-nouislider';
 import { DeviceDetectorModule } from 'ngx-device-detector';
 import { TooltipModule } from "ngx-tooltip";
 import { EventComponent } from './event/event.component';
+import { AboutPageComponent } from './about-page/about-page.component';
+import { PrivacyPageComponent } from './privacy-page/privacy-page.component';
+import { UserAgreementPageComponent } from './user-agreement-page/user-agreement-page.component';
 
 
 
@@ -96,7 +99,10 @@ import { EventComponent } from './event/event.component';
     SafePipe,
     EventSearchBarComponent,
     GeneralModalComponent,
-    EventComponent
+    EventComponent,
+    AboutPageComponent,
+    PrivacyPageComponent,
+    UserAgreementPageComponent
   ],
   imports: [
     BrowserModule,
