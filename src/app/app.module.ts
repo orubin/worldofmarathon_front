@@ -53,7 +53,7 @@ import { GeneralModalComponent } from './core/general-modal/general-modal.compon
 
 // VENDOR IMPORTS
 import { SlickModule } from 'ngx-slick';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AgmCoreModule } from '@agm/core';
 import {MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 import { NouisliderModule } from 'ng2-nouislider';
